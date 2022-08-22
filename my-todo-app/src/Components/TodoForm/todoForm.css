@@ -1,0 +1,31 @@
+#todo-add-from {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 6px;
+    padding: 0 30px;
+}
+
+#todo-add-input {
+    font-size: 15px;
+    display: block;
+    width: 300px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #757575;
+    padding: 10px 0;
+}
+
+#todo-add-input:focus {
+    outline: none;
+}
+.todoForm-label {
+    color: #696969;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    pointer-events: none;
+    left: 30px;
+    top: 10px;
+}

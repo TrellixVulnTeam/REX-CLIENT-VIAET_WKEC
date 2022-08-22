@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import TodoForm from './Components/TodoForm/TodoForm';
@@ -13,11 +14,12 @@ function App() {
   const [todo, setTodo] = useState("");
 
   const handleInputChage = (e) => {
-    console.log(e);
-  }
+    setTodos(e.target.value);
+  };
   const handleInputSubmit = (e) => {
-    console.log(e);
-  }
+    e.preventDefault();
+    console.log(e.target.value);
+  };
   return (
     <div className='app-container'>
       <TodoForm
@@ -26,7 +28,8 @@ function App() {
         btnText="Add"
         value={todo}
         onChange={handleInputChage}
-        onSubmit={handleInputSubmit} />
+        onSubmit={handleInputSubmit} 
+      />
       <TodoList todos={todos} />
     </div>
   );
