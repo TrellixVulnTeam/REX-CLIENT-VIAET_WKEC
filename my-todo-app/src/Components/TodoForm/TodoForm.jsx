@@ -17,11 +17,12 @@ const TodoForm = (id, type, btnText, value, onChange, onSubmit) => {
           {id === "todo-add" ? "Todo:" : ""}
         </label>
       </div>
-      <button className="form-submit-btn" type="submit">
-        {btnText === "Add" ?
-          <FaPlus className="btn-icon-add" /> :
-          <FaPlus className="btn-icon-save" />
-        }
+      <button id={`${id}-btn`} className="form-submit-btn" type="submit">
+        {btnText === "Add" ? (
+          <FaPlus className="btn-icon-add" />
+        ) : (
+          <FaSave className="btn-icon-save" />
+        )}
       </button>
     </form>
   )
