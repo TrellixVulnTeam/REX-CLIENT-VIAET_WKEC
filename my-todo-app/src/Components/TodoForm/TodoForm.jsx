@@ -1,8 +1,29 @@
-import './todoForm.css'
+import './todoForm.css';
+import { FaPlus } from "react-icons/fa";
+import { FaSave } from 'react-icons/fa';
 
-const TodoForm = () => {
+const TodoForm = (id, type, btnText, value, onChange, onSubmit) => {
   return (
-    <div>TodoForm</div>
+    <form id={`${id}-form`} onSubmit={(e) => onSubmit}>
+      <div>
+        <input id={`${id}-input`}
+          type={type}
+          value={value}
+          onChange={(e) => onChange}
+          required />
+        <span className='highlight'></span>
+        <span className="bar"></span>
+        <label className="todoForm-label" htmlFor="1">
+          {id === "todo-add" ? "Todo:" : ""}
+        </label>
+      </div>
+      <button className="form-submit-btn" type="submit">
+        {btnText === "Add" ?
+          <FaPlus className="btn-icon-add" /> :
+          <FaPlus className="btn-icon-save" />
+        }
+      </button>
+    </form>
   )
 }
 

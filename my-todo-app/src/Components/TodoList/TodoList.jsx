@@ -1,5 +1,5 @@
-import Todo from '../Todo/Todo'
-import './todoList.css'
+import Todo from '../Todo/Todo';
+import './todoList.css';
 
 const TodoList = ({todos}) => {
     const renderTodos=()=>{

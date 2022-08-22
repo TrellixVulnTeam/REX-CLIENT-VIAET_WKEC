@@ -1,8 +1,8 @@
-import './todo.css'
+import './todo.css';
 
-const Todo = () => {
+const Todo = ({todo}) => {
   return (
-    <div>Todo</div>
+    <div>{todo.todoName}</div>
   )
 }
 

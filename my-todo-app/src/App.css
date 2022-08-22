@@ -1,0 +1,7 @@
+.app-container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #a5b9db 0%, #ffff 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
