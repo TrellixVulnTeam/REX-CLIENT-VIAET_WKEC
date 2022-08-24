@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^5.2.0",
     "npm": "^8.18.0",
     "update": "^0.7.4"
   }
