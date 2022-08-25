@@ -1,16 +1,21 @@
 import './App.css';
-import { Routes, Route} from "react-router-dom";
-import  Home  from './Components/Home';
-import About from './Components/About';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from './Components/NavBar/NavBar';
+import Home from './Components/Home/Home';
+import About from './Components/About/About';
 
 function App() {
   return (
     <div className="App">
       <h1>Welcome to Rex Client!</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<NavBar />} >
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
