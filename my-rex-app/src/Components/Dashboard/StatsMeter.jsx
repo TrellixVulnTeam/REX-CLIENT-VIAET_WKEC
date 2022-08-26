@@ -1,4 +1,7 @@
-function StatsMeter({text}) {
+function StatsMeter({text,faculty}) {
+    const clickHandler = () => {
+        return console.log(faculty)
+    }
     return (
         <div className="row">
             <div className="col-lg-3 col-6">
@@ -11,7 +14,7 @@ function StatsMeter({text}) {
                     <div className="icon">
                         <i className="ion ion-bag" />
                     </div>
-                    <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+                    <a href="#" className="small-box-footer" onClick={clickHandler}>More info <i className="fas fa-arrow-circle-right" /></a>
                 </div>
             </div>
             {/* ./col */}

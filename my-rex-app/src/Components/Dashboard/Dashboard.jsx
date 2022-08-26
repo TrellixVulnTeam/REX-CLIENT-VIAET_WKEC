@@ -1,7 +1,7 @@
 import React from 'react'
 import StatsMeter from './StatsMeter'
 
-function Dashboard() {
+function Dashboard({faculty}) {
     return (
         <div className="content-wrapper">
             {/* Content Header (Page header) */}
@@ -25,7 +25,7 @@ function Dashboard() {
             <section className="content">
                 <div className="container-fluid">
                     {/* Small boxes (Stat box) */}
-                    <StatsMeter text={"200"}/>
+                    <StatsMeter text={"200"} faculty={faculty}/>
                     {/* /.row */}
                     {/* Main row */}
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Footer from './Components/Footer/Footer';
@@ -6,6 +7,11 @@ import Preloader from './Components/Preloader/Preloader';
 import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
+  const staticFaculty = [
+    {id:"AGR",name:"Agriculture"},
+    {id:"NAI",name:"Naini"},
+    ];
+  const [faculty,setFaculty] = useState(staticFaculty);
   return (
     <div className='wrapper'>
       {/* Preloader */}
@@ -19,7 +25,7 @@ function App() {
       <Sidebar />
 
       {/* Content Wrapper. Contains page content */}
-      <Dashboard />
+      <Dashboard faculty={faculty}/>
       {/* /.content-wrapper */}
 
       <Footer />
