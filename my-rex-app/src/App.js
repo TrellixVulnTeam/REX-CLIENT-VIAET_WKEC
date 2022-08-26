@@ -1,24 +1,34 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from './Components/NavBar/NavBar';
-import Home from './Components/Home/Home';
-import About from './Components/About/About';
-import SideBar from './Components/SideBar/SideBar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Footer from './Components/Footer/Footer';
+import Navbar from './Components/Navbar/Navbar';
+import Preloader from './Components/Preloader/Preloader';
+import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
   return (
-    <div className="wrapper">
-      <h1>Welcome to Rex Client!</h1>
-      {<SideBar />}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<NavBar />} >
-            
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className='wrapper'>
+      {/* Preloader */}
+      <Preloader />
+
+      {/* Navbar */}
+      <Navbar />
+      {/* /.navbar */}
+
+      {/* Main Sidebar Container */}
+      <Sidebar />
+
+      {/* Content Wrapper. Contains page content */}
+      <Dashboard />
+      {/* /.content-wrapper */}
+
+      <Footer />
+
+      {/* Control Sidebar */}
+      <aside className="control-sidebar control-sidebar-dark">
+        {/* Control sidebar content goes here */}
+      </aside>
+      {/* /.control-sidebar */}
     </div>
   );
 }
