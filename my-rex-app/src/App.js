@@ -12,22 +12,20 @@ import EmployeeService from './Services/EmployeeService';
 
 
 function App() {
-  const [faculty, setFaculty] = useState({});
-  const [college, setCollege] = useState({});
-  const [department, setDepartment] = useState({});
-  const [employee, setEmployee] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [faculty, setFaculty] = useState([]);
+  const [college, setCollege] = useState([]);
+  const [department, setDepartment] = useState([]);
+  const [employee, setEmployee] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = () => {
-    setLoading(true);
-
+    setLoaded(false);
     FacultyService.getFaculty().then(response => {
       setFaculty(response.data);
-      console.log(faculty);
     });
     CollegeService.getCollege().then(response => {
       setCollege(response.data);
@@ -38,33 +36,38 @@ function App() {
     EmployeeService.getEmployee().then(response => {
       setEmployee(response.data);
     });
-    setLoading(false);
+    setLoaded(true);
   }
 
   return (
-    <div className='wrapper'>
-      {/* Preloader */}
-      <Preloader />
+    <>
+      {loaded ? 
+        (<div className='wrapper'>
+          {/* Preloader */}
+          
 
-      {/* Navbar */}
-      <Navbar />
-      {/* /.navbar */}
+          {/* Navbar */}
+          <Navbar />
+          {/* /.navbar */}
 
-      {/* Main Sidebar Container */}
-      <Sidebar />
+          {/* Main Sidebar Container */}
+          <Sidebar />
 
-      {/* Content Wrapper. Contains page content */}
-      <Dashboard faculty={faculty} college={college} department={department} employee={employee} />
-      {/* /.content-wrapper */}
+          {/* Content Wrapper. Contains page content */}
+          <Dashboard faculty={faculty} college={college} department={department} employee={employee} />
+          {/* /.content-wrapper */}
 
-      <Footer />
+          <Footer />
 
-      {/* Control Sidebar */}
-      <aside className="control-sidebar control-sidebar-dark">
-        {/* Control sidebar content goes here */}
-      </aside>
-      {/* /.control-sidebar */}
-    </div>
+          {/* Control Sidebar */}
+          <aside className="control-sidebar control-sidebar-dark">
+            {/* Control sidebar content goes here */}
+          </aside>
+          {/* /.control-sidebar */}
+        </div>) :
+        (<div className='wrapper'><Preloader /></div>)  
+      }
+    </>
   );
 }
 

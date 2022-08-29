@@ -3,13 +3,7 @@ import { useState } from 'react';
 import StatsMeterList from './StatsMeter/StatsMeterList'
 
 function Dashboard({ faculty,college,department,employee }) {
-    const staticStatsMeters = [
-        { id: 1, count: faculty.length, name: "Faculties", color: "bg-info", icon: "ion-bag" },
-        { id: 2, count: 300, name: "Colleges", color: "bg-success", icon: "ion-stats-bars" },
-        { id: 3, count: 400, name: "Departments", color: "bg-warning", icon: "ion-person-add" },
-        { id: 4, count: 500, name: "Employees", color: "bg-danger", icon: "ion-pie-graph" }
-    ];
-    const [statsMeters, setStatsMeters] = useState(staticStatsMeters);
+    
     return (
         <div className="content-wrapper">
             {/* Content Header (Page header) */}
@@ -33,7 +27,7 @@ function Dashboard({ faculty,college,department,employee }) {
             <section className="content">
                 <div className="container-fluid">
                     {/* Small boxes (Stat box) */}
-                    <StatsMeterList statsMeters={statsMeters} />
+                    <StatsMeterList faculty={faculty} college={college} department={department} employee={employee} />
                     {/* /.row */}
                     {/* Main row */}
 
