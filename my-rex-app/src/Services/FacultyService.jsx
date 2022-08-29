@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FACULTY_API_BASE_URL = "http://128.121.3.62:9090/api/v1/faculty";
+const FACULTY_API_BASE_URL = "http://localhost:9090/api/v1/faculty";
 
 class FacultyService {
 
