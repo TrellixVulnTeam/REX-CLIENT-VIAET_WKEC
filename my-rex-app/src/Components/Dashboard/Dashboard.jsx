@@ -1,8 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
 import StatsMeterList from './StatsMeter/StatsMeterList'
 
-function Dashboard({ faculty,college,department,employee }) {
+function Dashboard({ faculty, college, department, employee }) {
     
     return (
         <div className="content-wrapper">
@@ -27,7 +26,7 @@ function Dashboard({ faculty,college,department,employee }) {
             <section className="content">
                 <div className="container-fluid">
                     {/* Small boxes (Stat box) */}
-                    <StatsMeterList faculty={faculty} college={college} department={department} employee={employee} />
+                    <StatsMeterList faculty={faculty} college={college} department={department} employee={employee}/>
                     {/* /.row */}
                     {/* Main row */}
 

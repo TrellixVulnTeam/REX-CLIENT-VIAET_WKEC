@@ -10,7 +10,6 @@ import CollegeService from './Services/CollegeService';
 import DepartmentService from './Services/DepartmentService';
 import EmployeeService from './Services/EmployeeService';
 
-
 function App() {
   const [faculty, setFaculty] = useState([]);
   const [college, setCollege] = useState([]);
@@ -18,33 +17,31 @@ function App() {
   const [employee, setEmployee] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
+  const fetchData = async () => {
+    setLoaded(false);
+    const fac = await FacultyService.getFaculty();
+    setFaculty(fac.data);
+    const col = await CollegeService.getCollege(); 
+    setCollege(col.data);  
+    const dept = await DepartmentService.getDepartment();
+    setDepartment(dept.data);
+    const emp = await EmployeeService.getEmployee();
+    setEmployee(emp.data);
+    
+    setLoaded(true);
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = () => {
-    setLoaded(false);
-    FacultyService.getFaculty().then(response => {
-      setFaculty(response.data);
-    });
-    CollegeService.getCollege().then(response => {
-      setCollege(response.data);
-    });
-    DepartmentService.getDepartment().then(response => {
-      setDepartment(response.data);
-    });
-    EmployeeService.getEmployee().then(response => {
-      setEmployee(response.data);
-    });
-    setLoaded(true);
-  }
 
   return (
     <>
-      {loaded ? 
+      {loaded ?
         (<div className='wrapper'>
           {/* Preloader */}
-          
+
 
           {/* Navbar */}
           <Navbar />
@@ -54,7 +51,7 @@ function App() {
           <Sidebar />
 
           {/* Content Wrapper. Contains page content */}
-          <Dashboard faculty={faculty} college={college} department={department} employee={employee} />
+          <Dashboard faculty={faculty} college={college} department={department} employee={employee}/>
           {/* /.content-wrapper */}
 
           <Footer />
@@ -65,7 +62,7 @@ function App() {
           </aside>
           {/* /.control-sidebar */}
         </div>) :
-        (<div className='wrapper'><Preloader /></div>)  
+        (<div className='wrapper'><Preloader /></div>)
       }
     </>
   );
