@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-
-function StatsMeter({ statsMeter }) {
+function StatsMeter({ statsMeter, handleClick }) {
     
     return (
         <div className="col-lg-3 col-6">
@@ -13,7 +11,7 @@ function StatsMeter({ statsMeter }) {
                 <div className="icon">
                     <i className={`ion ${statsMeter.icon}`} />
                 </div>
-                <a href="#" className="small-box-footer" >More info <i className="fas fa-arrow-circle-right" /></a>
+                <a href="#" className="small-box-footer" onClick={()=>handleClick(statsMeter.id)}>More info <i className="fas fa-arrow-circle-right" /></a>
             </div>
         </div>
     )
