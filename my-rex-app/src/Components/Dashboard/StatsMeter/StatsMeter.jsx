@@ -11,7 +11,7 @@ function StatsMeter({ statsMeter, handleClick }) {
                 <div className="icon">
                     <i className={`ion ${statsMeter.icon}`} />
                 </div>
-                <a href="#" className="small-box-footer" onClick={()=>handleClick(statsMeter.id)}>More info <i className="fas fa-arrow-circle-right" /></a>
+                <a href="#" className="small-box-footer" onClick={(e)=>handleClick(e, statsMeter.id)}>More info <i className="fas fa-arrow-circle-right" /></a>
             </div>
         </div>
     )
