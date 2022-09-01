@@ -3,6 +3,32 @@ import StatsMeter from "./StatsMeter"
 import Table from "./Table";
 
 function StatsMeterList({ faculty, college, department, employee }) {
+    // Meters
+    const staticStatsMeters = [
+        { id: 1, count: faculty.length, name: "Faculties", color: "bg-info", icon: "ion-university" },
+        { id: 2, count: college.length, name: "Colleges", color: "bg-success", icon: "ion-podium" },
+        { id: 3, count: department.length, name: "Departments", color: "bg-warning", icon: "ion-erlenmeyer-flask" },
+        { id: 4, count: employee.length, name: "Employees", color: "bg-danger", icon: "ion-person" }
+    ];
+    const [statsMeters, setStatsMeters] = useState(staticStatsMeters);
+
+    // Tables
+    const staticTables = [
+        { id: 5, obj: faculty, title: "Faculty Details", headings: ["Sr", "ID", "Name", "Official Link"] },
+        { id: 6, obj: college, title: "College Details", headings: ["Sr", "ID", "Name", "Official Link"] },
+        { id: 7, obj: department, title: "Department Details", headings: ["Sr", "ID", "Name", "Official Link"] },
+        { id: 8, obj: employee, title: "Employee Details", headings: ["Sr", "Emp ID", "Prefix1", "Prefix2", "Name", "Designation", "Official Email", "Department", "Action"] }
+    ];
+    const [tables, setTables] = useState(staticTables);
+
+    // Tables Shown/Hidden
+    const staticTableShown = {
+        showFacultyTable: false,
+        showCollegeTable: false,
+        showDepartmentTable: false,
+        showEmployeeTable: false
+    };
+    const [isTableShown, setIsTableShown] = useState(staticTableShown);
 
     const handleClick = (e, id) => {
         e.preventDefault();
@@ -37,29 +63,13 @@ function StatsMeterList({ faculty, college, department, employee }) {
         }
         setIsTableShown(tempTableShown);
     }
-    const staticTableShown = {
-        showFacultyTable: false,
-        showCollegeTable: false,
-        showDepartmentTable: false,
-        showEmployeeTable: false
-    };
-    const [isTableShown, setIsTableShown] = useState(staticTableShown);
 
-    const staticStatsMeters = [
-        { id: 1, count: faculty.length, name: "Faculties", color: "bg-info", icon: "ion-university" },
-        { id: 2, count: college.length, name: "Colleges", color: "bg-success", icon: "ion-podium" },
-        { id: 3, count: department.length, name: "Departments", color: "bg-warning", icon: "ion-erlenmeyer-flask" },
-        { id: 4, count: employee.length, name: "Employees", color: "bg-danger", icon: "ion-person" }
-    ];
-    const [statsMeters, setStatsMeters] = useState(staticStatsMeters);
-
-    const staticTables = [
-        { id: 5, obj: faculty, title: "Faculty Details", headings: ["Sr", "ID", "Name", "Official Link"] },
-        { id: 6, obj: college, title: "College Details", headings: ["Sr", "ID", "Name", "Official Link"] },
-        { id: 7, obj: department, title: "Department Details", headings: ["Sr", "ID", "Name", "Official Link"] },
-        { id: 8, obj: employee, title: "Employee Details", headings: ["Sr", "Emp ID", "Prefix1", "Prefix2", "Name", "Designation", "Official Email", "Department", "Action"] }
-    ];
-    const [tables, setTables] = useState(staticTables);
+    const removeDataTableSpecificScript = () => {
+        var me = document.querySelector('script[src="plugins/datatables/jquery.dataTableSpecificScript.js"]');
+        if (me) {
+            me.remove();
+        }
+    }
 
     const renderStatsMeters = () => {
         return statsMeters.map((statsMeter) => {
@@ -81,6 +91,7 @@ function StatsMeterList({ faculty, college, department, employee }) {
     return (
         <>
             <div className="row">{renderStatsMeters()}</div>
+            {removeDataTableSpecificScript()}
             <div className="row">{renderTables()}</div>
         </>
     )

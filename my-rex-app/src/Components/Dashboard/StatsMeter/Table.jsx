@@ -2,8 +2,6 @@ import { useState } from "react"
 
 function Table({ table, closeButtonClick }) {
 
-  const[extScript,setExtScript] = useState();
-
   const renderTableHeadings = () => {
     return table.headings.map((heading) => {
       return <th key={table.headings.indexOf(heading) + 1}>{heading}</th>
@@ -70,11 +68,10 @@ function Table({ table, closeButtonClick }) {
       script.onload = () => {
         if (callback) callback();
       };
-      setExtScript(script);
-      console.log(script);
     }
     if (existingScript && callback) callback();
   };
+  
 
   return (
     <div className="col-12">
