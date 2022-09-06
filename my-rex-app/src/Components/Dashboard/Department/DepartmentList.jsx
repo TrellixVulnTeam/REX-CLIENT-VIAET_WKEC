@@ -1,17 +1,17 @@
 import DepartmentCard from './DepartmentCard'
 
-function DepartmentList({department}) {
-    const staticDepartments = [
-        {id:"CSIT",name: "DEPARTMENT OF COMPUTER SCIENCE AND INFORMATION TECHNOLOGY", img_src: "../dist/img/user7-128x128.jpg",hod: "Dr. W. Jeberson (Head)"},
-        {}
-    ]
-    const renderDepartments = ()=> {
-        return department.map((department) => {
-            return <DepartmentCard key={department.departmentId} department={department} />
-        })
-    }
+function DepartmentList({ department }) {
+  const renderDepartments = () => {
+    return department.map((department) => {
+      return <DepartmentCard key={department.departmentId} department={department} />
+    })
+  }
+
   return (
-    <div>{renderDepartments()}</div>
+    <div>
+      <h3 className="mt-4 mb-4">VIAET</h3>
+      {renderDepartments()}
+    </div>
   )
 }
 
