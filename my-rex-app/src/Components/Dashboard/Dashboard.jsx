@@ -1,4 +1,5 @@
 import React from 'react'
+import DepartmentList from './Department/DepartmentList'
 import StatsMeterList from './StatsMeter/StatsMeterList'
 
 function Dashboard({ faculty, college, department, employee }) {
@@ -29,6 +30,7 @@ function Dashboard({ faculty, college, department, employee }) {
                     <StatsMeterList faculty={faculty} college={college} department={department} employee={employee}/>
                     {/* /.row */}
                     {/* Main row */}
+                    <DepartmentList department={department}/>
 
                     <div className="row">
                         {/* Left col */}
