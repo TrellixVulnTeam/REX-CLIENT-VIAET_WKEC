@@ -30,7 +30,7 @@ function Dashboard({ faculty, college, department, employee }) {
                     <StatsMeterList faculty={faculty} college={college} department={department} employee={employee}/>
                     {/* /.row */}
                     {/* Main row */}
-                    <DepartmentList department={department}/>
+                    <DepartmentList faculty={faculty}/>
 
                     <div className="row">
                         {/* Left col */}

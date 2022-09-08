@@ -24,7 +24,7 @@ function DepartmentCard({ department }) {
                     {/* Widget: user widget style 2 */}
                     <div className="card card-widget widget-user-2 collapsed-card">
                         {/* Add the bg color to the header using any of the bg-* classes */}
-                        <a href="/#">
+                        <a href="#">
                             <div className="card-header bg-white" aria-expanded="false" data-card-widget="collapse" >
                                 <div className="card-title">
                                     <div className="widget-user-image">
@@ -34,14 +34,14 @@ function DepartmentCard({ department }) {
                                     <h3 className="widget-user-username">{department.name}</h3>
                                     <h5 className="widget-user-desc">{renderHeadName()}</h5>
                                 </div>
-                                <div className="card-tools">
+                                {/* <div className="card-tools">
                                     <button type="button" className="btn btn-tool" data-card-widget="collapse">
                                         <i className="fas fa-minus" />
                                     </button>
                                     <button type="button" className="btn btn-tool" data-card-widget="remove">
                                         <i className="fas fa-times" />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </a>
                         <div className="card-footer p-3">
