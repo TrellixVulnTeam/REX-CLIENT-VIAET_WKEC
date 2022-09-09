@@ -1,24 +1,25 @@
 import DepartmentCard from './DepartmentCard'
 
 function DepartmentList({ faculty }) {
-  // const renderDepartments = () => {
-  //   return department.map((department) => {
-  //     return <DepartmentCard key={department.departmentId} department={department} />
-  //   })
-  // }
-  const renderDepartment2 = () => {
+
+  const renderCollege = () => {
     return faculty.map((fac) => {
-      return fac.colleges.map((coll)=> {
-        return (<div>{coll.name}</div>
-        coll.departments.map )
+      return fac.colleges.map((college) => {
+        return renderDepartment(college);
       })
     })
   }
+  const renderDepartment = (college) => {
+    return [
+      <h3 className='mt-4 mb-4' key={college.collegeId}>{college.name}</h3>,
+      college.departments.map((department) => {
+        return <DepartmentCard key={department.departmentId} department={department} />
+      })
+    ]
+  }
   return (
     <div>
-      <h3 className="mt-4 mb-4">VIAET</h3>
-      {/* {renderDepartments()} */}
-      {renderDepartment2()}
+      {renderCollege()}
     </div>
   )
 }
