@@ -17,7 +17,7 @@ function StatsMeterList({ faculty, college, department, employee }) {
         { id: 5, obj: faculty, title: "Faculty Details", headings: ["Sr", "ID", "Name", "Official Link"] },
         { id: 6, obj: college, title: "College Details", headings: ["Sr", "ID", "Name", "Official Link"] },
         { id: 7, obj: department, title: "Department Details", headings: ["Sr", "ID", "Name", "Official Link"] },
-        { id: 8, obj: employee, title: "Employee Details", headings: ["Sr", "Emp ID", "Prefix1", "Prefix2", "Name", "Designation", "Official Email", "Department", "Action"] }
+        { id: 8, obj: employee, title: "Employee Details", headings: ["Sr", "Emp ID", "Prefix1", "Prefix2", "Name", "Designation", "Official Email", "Department","Status","Action"] }
     ];
     const [tables, setTables] = useState(staticTables);
 

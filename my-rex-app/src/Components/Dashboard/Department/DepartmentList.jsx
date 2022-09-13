@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import DepartmentCard from './DepartmentCard'
+import FilterCollege from './FilterCollege';
 
 function DepartmentList({ faculty }) {
 
@@ -11,14 +13,20 @@ function DepartmentList({ faculty }) {
   }
   const renderDepartment = (college) => {
     return [
-      <h3 className='mt-4 mb-4' key={college.collegeId}>{college.name}</h3>,
+      <h4 className='mt-4 mb-4' key={college.collegeId}>{college.name}</h4>,
       college.departments.map((department) => {
         return <DepartmentCard key={department.departmentId} department={department} />
       })
     ]
   }
+
+  const onFilterValueSelected = (collegeId) =>
+  {
+      console.log(collegeId);
+  }
   return (
     <div>
+      <FilterCollege faculty={faculty} onFilterValueSelected={onFilterValueSelected}/>
       {renderCollege()}
     </div>
   )

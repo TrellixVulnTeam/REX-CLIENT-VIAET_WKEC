@@ -44,49 +44,89 @@ function DepartmentCard({ department }) {
                                 </div> */}
                             </div>
                         </a>
-                        <div className="card-footer p-0">
+                        <div className="card-footer p-3">
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <div className="card-body">
-                                        {/* we are adding the accordion ID so Bootstrap's collapse plugin detects it */}
-                                        <div id="accordion">
-                                            <div className="card card-white">
-                                                <div className="card-header">
-                                                    <h4 className="card-title w-100">
-                                                        <a className="d-block w-100" data-toggle="collapse" href="#collapseOne">
-                                                            Courses <span className="float-right badge bg-info">5</span>
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapseOne" className="collapse" data-parent="#accordion">
-                                                    <div className="card-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                                        3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                                        laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                                        nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                                        beer
-                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                                        labore sustainable VHS.
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                                        3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                                        laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                                        nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                                        beer
-                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                                        labore sustainable VHS.
+                                    {/* <div className="card-body"> */}
+                                    {/* we are adding the accordion ID so Bootstrap's collapse plugin detects it */}
+                                    <div id="accordion">
+                                        <div className="card card-white">
+                                            <div className="card-header">
+                                                <h4 className="card-title w-100">
+                                                    <a className="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                                                        Courses <span className="float-right badge bg-info">5</span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" className="collapse" data-parent="#accordion">
+                                                <div className="card-body">
+                                                    <div className="card">
+                                                        <div className="card-header">
+                                                            <h3 className="card-title">Under-Graduate (UG)</h3>
+                                                        </div>
+                                                        {/* /.card-header */}
+                                                        <div className="card-body p-0">
+                                                            <table className="table table-sm">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style={{ width: 10 }}>#</th>
+                                                                        <th>Name</th>
+                                                                        <th>Progress</th>
+                                                                        <th style={{ width: 40 }}>Semesters</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1.</td>
+                                                                        <td>Update software</td>
+                                                                        <td>
+                                                                            <div className="progress progress-xs">
+                                                                                <div className="progress-bar progress-bar-danger" style={{ width: '55%' }} />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><span className="badge bg-danger">55%</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2.</td>
+                                                                        <td>Clean database</td>
+                                                                        <td>
+                                                                            <div className="progress progress-xs">
+                                                                                <div className="progress-bar bg-warning" style={{ width: '70%' }} />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><span className="badge bg-warning">70%</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3.</td>
+                                                                        <td>Cron job running</td>
+                                                                        <td>
+                                                                            <div className="progress progress-xs progress-striped active">
+                                                                                <div className="progress-bar bg-primary" style={{ width: '30%' }} />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><span className="badge bg-primary">30%</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4.</td>
+                                                                        <td>Fix and squish bugs</td>
+                                                                        <td>
+                                                                            <div className="progress progress-xs progress-striped active">
+                                                                                <div className="progress-bar bg-success" style={{ width: '90%' }} />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><span className="badge bg-success">90%</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        {/* /.card-body */}
                                                     </div>
+                                                    {/* /.card */}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    {/* </div> */}
                                     {/* /.card-body */}
                                 </li>
                                 <li className="nav-item">

@@ -53,6 +53,7 @@ function Table({ table, closeButtonClick }) {
             <td>{row.designation}</td>
             <td>{row.email}</td>
             <td>{row.departmentID}</td>
+            <td>{row.status}</td>
             <td><button className="btn btn-block btn-info">Details</button></td>
           </tr>)
       })
